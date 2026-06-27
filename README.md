@@ -156,7 +156,19 @@ These anomalies may indicate unexpected behavior, sensor issues, or potential sy
 * Jupyter Notebook
 
 ---
+## Setup Instructions
 
+1. Download this repository.
+2. Install the required Python libraries.
+
+```bash
+pip install pandas numpy matplotlib scikit-learn tensorflow joblib
+```
+
+3. Open the Jupyter notebooks.
+4. Place the dataset in the project folder.
+5. Run the notebooks one by one in order.
+6. The trained model (.pkl) and TensorFlow Lite model (.tflite) will be generated after running the notebooks.
 # Project Outputs
 
 The project generated:
@@ -169,6 +181,59 @@ The project generated:
 * Anomaly Detection Results
 
 ---
+## Approach Taken
+
+The project was completed in the following steps:
+
+- Loaded the solar monitoring dataset.
+- Cleaned the data and handled missing values.
+- Converted the timestamp into useful time features like hour and minute.
+- Performed business insights to understand battery, solar and load behaviour.
+- Built a forecasting model to predict PV current.
+- Developed a TensorFlow model for prediction.
+- Converted the trained model into TensorFlow Lite (.tflite) format for future deployment.
+
+  ---
+  ## Assumptions Made
+
+- The dataset represents data collected from a solar monitoring system.
+- The timestamp values are assumed to be correct.
+- Missing values were handled during preprocessing.
+- Since the current dataset contains only a short monitoring period, seasonal analysis is limited.
+- The same workflow can be applied to larger datasets for better forecasting.
+
+  ---
+
+## Results Obtained
+
+- Successfully cleaned and analysed the dataset.
+- Generated business insights from battery, load and solar data.
+- Built a forecasting model for PV current prediction.
+- Trained a TensorFlow model.
+- Converted the trained model into TensorFlow Lite (.tflite).
+- Saved the trained machine learning model (.pkl).
+
+  ---
+  ## Business Insights Report
+
+Some observations from the current dataset are:
+
+- Average PV Current: 0.04 A
+- Maximum PV Current: 3.8 A
+- Average Battery Voltage: 14.25 V
+- Most battery records were in the **Normal** state.
+- The load remained mostly **OFF** during the available monitoring period.
+- The current dataset is small, so long-term seasonal trends cannot be identified yet. These can be analysed when a larger dataset is available.
+
+  ---
+  ## Future Work
+
+- Train the model using a larger historical dataset.
+- Generate monthly and seasonal business insights.
+- Improve forecasting accuracy.
+- Use the TensorFlow Lite model for deployment on edge or mobile devices.
+
+  ---
 
 # Conclusion
 
